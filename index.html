@@ -103,7 +103,7 @@
             <div class="leadership-grid">
                 <article class="leader-card">
                     <img src="images/rev.JPG" alt="Senior Pastor" class="clickable-image" loading="lazy">
-                    <div class="leader-info"><h3>Pastor Derrick</h3><p>Senior Pastor</p></div>
+                    <div class="leader-info"><h3>Rev.Derrick Boateng</h3><p>Senior Pastor</p></div>
                 </article>
                 <article class="leader-card">
                     <img src="images/church-leader.JPG" alt="Church Leader" class="clickable-image" loading="lazy">
@@ -271,22 +271,46 @@
                     <p>Have a question, prayer request or want to visit our church? Get in touch with us.</p>
                     <div class="contact-detail"><span aria-hidden="true">📍</span><div><h4>Our Location</h4><p>Ahinsan Estate, Kumasi, Ashanti Region, Ghana</p></div></div>
                     <div class="contact-detail"><span aria-hidden="true">📞</span><div><h4>Telephone</h4><p><a href="tel:+233268861739">0268861739</a></p></div></div>
-                    <div class="contact-detail"><span aria-hidden="true">✉</span><div><h4>Email</h4><p>To be announced</p></div></div>
-                </div>
+                    <div class="contact-detail">
+    <span>✉</span>
+    <div>
+        <h4>Email</h4>
+        <p>
+            <a href="mailto:gloriouscityofchristchurch@gmail.com">
+                gloriouscityofchristchurch@gmail.com
+            </a>
+        </p>
+    </div>
+</div>
                 <div class="contact-form">
-                    <form id="contactForm">
-                        <label for="name">Your Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Full Name" required>
-                        <label for="email">Your Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email Address" required>
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                        <p id="formMessageText" role="status" aria-live="polite"></p>
-                        <p class="form-note">This form is a demonstration and does not send messages yet. Please call the church telephone number above.</p>
-                    </form>
+                    <form id="contactForm"
+      action="https://formspree.io/f/myewzlne"
+      method="POST">
+
+    <input type="hidden" name="_subject"
+           value="New message from Glorious City of Christ website">
+
+    <label for="name">Your Full Name</label>
+    <input type="text" id="name" name="name"
+           placeholder="Your Full Name" required>
+
+    <label for="email">Your Email Address</label>
+    <input type="email" id="email" name="email"
+           placeholder="Your Email Address" required>
+
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject"
+           placeholder="Subject" required>
+
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" rows="6"
+              placeholder="Write your message..." required></textarea>
+
+    <button type="submit" class="btn">Send Message</button>
+
+    <p id="formMessageText" role="status"
+       aria-live="polite"></p>
+</form>
                 </div>
             </div>
         </div>

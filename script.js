@@ -32,14 +32,14 @@ if (menuBtn && navLinks) {
 }
 
 // =========================
-// CONTACT FORM DEMO
-// This does not send email yet.
+// CONTACT FORM - FORMSPREE
 // =========================
+
 const contactForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessageText");
 
 if (contactForm && formMessage) {
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         if (!contactForm.checkValidity()) {
@@ -47,10 +47,47 @@ if (contactForm && formMessage) {
             return;
         }
 
-        formMessage.textContent =
-            "Thank you. The form is a demonstration and has not sent your message. Please call 0268861739.";
-        formMessage.style.color = "#8a6508";
-        contactForm.reset();
+        const submitButton = contactForm.querySelector(
+            'button[type="submit"]'
+        );
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+        formMessage.textContent = "";
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: new FormData(contactForm),
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+                formMessage.textContent =
+                    "Thank you! Your message has been sent successfully.";
+
+                formMessage.style.color = "green";
+                contactForm.reset();
+
+            } else {
+                formMessage.textContent =
+                    "Sorry, your message could not be sent. Please try again.";
+
+                formMessage.style.color = "red";
+            }
+
+        } catch (error) {
+            formMessage.textContent =
+                "Connection problem. Please check your internet and try again.";
+
+            formMessage.style.color = "red";
+
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Send Message";
+        }
     });
 }
 
